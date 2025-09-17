@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 💖</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #111;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+    }
+    .corazon {
+      color: #ff00de;
+      font-size: 6em;
+      animation: latido 1s infinite;
+      text-shadow: 0 0 20px #ff00de, 0 0 60px #00fff7;
+    }
+    @keyframes latido {
+      0%, 100% { transform: scale(1);}
+      50% { transform: scale(1.2);}
+    }
+    .frase {
+      font-size: 2.4em;
+      margin: 24px 0;
+      opacity: 0;
+      transition: opacity 1s;
+      text-align: center;
+      text-shadow:
+        0 0 7px #ff00de,
+        0 0 10px #00fff7,
+        0 0 21px #39ff14,
+        0 0 42px #fffb00;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .neon1 { color: #00fff7; }
+    .neon2 { color: #ff00de; }
+    .neon3 { color: #39ff14; }
+    .neon4 { color: #fffb00; }
+    .neon5 { color: #ff6ec7; }
+    .neon6 { color: #00ffea; }
+    .neon7 { color: #faff00; }
+    @media (max-width: 600px) {
+      .frase { font-size: 1.3em; }
+      .corazon { font-size: 3em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="corazon">❤</div>
+  <div class="frase neon1" id="f1">Amo tu cabello</div>
+  <div class="frase neon2" id="f2">Amo tu sonrisa</div>
+  <div class="frase neon3" id="f3">Amo tu cuerpo</div>
+  <div class="frase neon4" id="f4">Amo tus ojos</div>
+  <div class="frase neon5" id="f5">Amo tus labios</div>
+  <div class="frase neon6" id="f6">Quiero estar contigo por mucho tiempo</div>
+  <script>
+    let frases = [ "f1", "f2", "f3", "f4", "f5", "f6" ];
+    let i = 0;
+    function mostrarFrase() {
+      if(i < frases.length) {
+        document.getElementById(frases[i]).style.opacity = 1;
+        i++;
+        setTimeout(mostrarFrase, 1700);
+      }
+    }
+    window.onload = mostrarFrase;
+  </script>
+</body>
+</html>
